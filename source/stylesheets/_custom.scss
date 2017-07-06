@@ -58,3 +58,23 @@ body .content blockquote > p {
   padding: 30px 30px 0;
   box-sizing: border-box;
 }
+
+.content > .move-right {
+  background-color: $code-bg;
+  color: #fff;
+
+  padding: 0 $main-padding;
+  margin: 0;
+  width: $examples-width;
+
+  float:right;
+  clear:right;
+
+  box-sizing: border-box;
+
+  @extend %right-col;
+
+  h3 {
+    margin: 0
+  }
+}

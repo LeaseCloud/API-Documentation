@@ -2,11 +2,6 @@
 title: Montly API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
-
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
@@ -21,164 +16,154 @@ search: true
 
 Welcome to Montly AB API
 
-# Authentication
+# Orders
 
-> To authorize, use this code:
 
-```ruby
-require 'kittn'
+## Create a new order
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```http
+POST /v1/orders HTTPS/1.1
+Content-Type: application/json
+Authorization: Bearer [bearer token]
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-### Get All Kittens
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+<div class="move-right">
+  <h3>Request body structure</h3>
+</div>
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "data": {
+    "type": "order",
+    "attributes": "ORDER OBJECT",
+    "relationships": {  
+      "item": {  
+        "data": [ "ITEM OBJECTS" ]
+      }
+    }
+  }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+<div class="move-right">
+  <h3>Request body example</h3>
+</div>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+```json
+{
+  "data":  {  
+    "type": "order",
+    "attributes": {  
+      "orderId": "c8e0bda3-dbe0-55ad-8de7-4b341fab49a3",
+      "firstName": "Matthew",
+      "lastName": "Hunter",
+      "company": "Winnie Moran",
+      "email": "uc@pokev.dk",
+      "phone": "09 61 64 48 49",
+      "itemsCount": 2,
+      "totalPrice": 962768,
+      "VAT": 24440,
+      "shipping": 12979,
+      "shippingVAT": 11146,
+      "customerIp": "131.168.20.70",
+      "currency": "SEK",
+      "months": 24,
+      "billingAddress": "Russell Maldonado",
+      "billingCity": "Leona Lindsey",
+      "billingState": "Gussie Washington",
+      "billingPostcode": "Sally Dean",
+      "billingCountry": "Sophia McDaniel",
+      "sandboxMode": false,
+      "monthlyPrice": 121042,
+      "tariff": 2.1,
+      "orgNumber": "559089-4308"
+    },
+    "relationships": {  
+      "item": {  
+        "data": [  
+          {  
+            "name": "no",
+            "productId": "32832849-23cc-550c-9456-06ea2ff0b55c",
+            "quantity": 2,
+            "totalPrice": 813726,
+            "VAT": 12345
+          },
+          {  
+            "name": "wel",
+            "productId": "88624a25-e7e8-5da4-a819-8af8f5079ce2",
+            "quantity": 8,
+            "totalPrice": 490920,
+            "VAT": 5254
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+<div class="move-right">
+  <h3>Response body</h3>
+</div>
+
+```json
+{
+  "id": 42
+}
+```
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`POST /v1/orders`
 
-### URL Parameters
+### Order object
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Type        | Required | Description
+--------- | ----------- | -------- | -----------
+firstName | string | ✔︎
+lastName | string | ✔︎
+company | string | ✔︎
+orgNumber | string | ✔︎ | 000000-0000
+email | string | ✔︎
+phone | string | ✔︎
+itemsCount | integer | ✔︎
+totalPrice | integer | ✔︎
+VAT | integer | ✔︎
+shipping | integer | ✔︎
+shippingVAT | integer | ✔︎
+currency | enum | ✔︎ | `SEK`
+months | integer | ✔︎ |
+tariff | decimal | ✔︎ |
+customerIp | string | ✔︎ |
+billingAddress | string | ✔︎ |
+billingAddress2 | string |
+billingCity | string | ✔︎ |
+billingState | string |
+billingPostcode | string | ✔︎ |
+billingCountry | string |
+shippingFirstName | string |
+shippingLastName | string |
+shippingCompany | string |
+shippingAddress | string |
+shippingAddress2 | string |
+shippingCity | string |
+shippingState | string |
+shippingPostcode | string |
+shippingCountry | string |
+sandboxMode | boolean |
+kickback | integer |
+monthlyPrice | integer | ✔︎ |
+customerMessage | string |
+
+### Item object
+
+Parameter | Type        | Required | Description
+--------- | ----------- | -------- | -----------
+name | string | ✔︎ |
+productId | string | ✔︎ |
+quantity | integer | ✔︎ |
+totalPrice | integer | ✔︎ |
+VAT | integer | ✔︎ |
+sku | string | |
+variationId | string | |
+serialNumber | string | |
