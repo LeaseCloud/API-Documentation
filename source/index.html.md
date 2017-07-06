@@ -18,11 +18,10 @@ Welcome to Montly AB API
 
 # Orders
 
-
 ## Create a new order
 
 ```http
-POST /v1/orders HTTPS/1.1
+POST /v1/orders HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer [bearer token]
 ```
@@ -167,3 +166,37 @@ VAT | integer | ✔︎ |
 sku | string | |
 variationId | string | |
 serialNumber | string | |
+
+
+# Tariff
+
+## Get current tariff
+
+```http
+GET /v1/tariff HTTP/1.1
+Authorization: Bearer [bearer token]
+```
+
+<div class="move-right">
+  <h3>Response body</h3>
+</div>
+
+```json
+{  
+  "data": {  
+    "type": "tariffs",
+    "attributes": {  
+      "tariffs": [  
+        {  
+          "months": 24,
+          "tariff": 4.47
+        },
+        {  
+          "months": 36,
+          "tariff": 3.04
+        }
+      ]
+    }
+  }
+}
+```
