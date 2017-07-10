@@ -120,6 +120,7 @@ Authorization: Bearer [bearer token]
 
 Parameter | Type        | Required | Description
 --------- | ----------- | -------- | -----------
+orderId | string | ✔︎
 firstName | string | ✔︎
 lastName | string | ✔︎
 company | string | ✔︎
@@ -127,7 +128,7 @@ orgNumber | string | ✔︎ | 000000-0000
 email | string | ✔︎
 phone | string | ✔︎
 itemsCount | integer | ✔︎
-totalPrice | integer | ✔︎
+totalPrice | integer | ✔︎ | Minimum 6000 * 100
 VAT | integer | ✔︎
 shipping | integer | ✔︎
 shippingVAT | integer | ✔︎
@@ -174,7 +175,7 @@ serialNumber | string | |
 ## Get current tariff
 
 ```http
-GET /v1/tariff HTTP/1.1
+GET /v1/tariffs HTTP/1.1
 Authorization: Bearer [bearer token]
 ```
 
@@ -190,11 +191,11 @@ Authorization: Bearer [bearer token]
       "tariffs": [  
         {  
           "months": 24,
-          "tariff": 4.47
+          "tariff": 1.47
         },
         {  
           "months": 36,
-          "tariff": 3.04
+          "tariff": 1.04
         }
       ]
     }

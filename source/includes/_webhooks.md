@@ -8,10 +8,31 @@ Define a url endpoint where we will make post requests to with updates
 POST https://example.com/montly/callback/ HTTP/1.1
 X-Montly-Version: 1.0.0
 
+JWT_PAYLOAD
+```
+
+> Events
+
+```json
 {
-  "action": "orderUpdate",
+  "action": "orderStatus",
   "orderId": 42,
-  "event": "accepted"
+  "status": "[ accepted | denied ]"
+}
+```
+```json
+{
+  "action": "tariffs",
+  "tariffs": [  
+    {  
+      "months": 24,
+      "tariff": 1.51
+    },
+    {  
+      "months": 36,
+      "tariff": 1.01
+    }
+  ]
 }
 ```
 
