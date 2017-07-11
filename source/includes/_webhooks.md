@@ -2,16 +2,22 @@
 
 ```http
 POST https://example.com/montly/callback/ HTTP/1.1
-X-Montly-Version: 1.0.0
+Montly-Version: 1.0.0
+Montly-Signature: HMAC SHA-256
+Montly-Timestamp: 1499785732
 
-JWT_PAYLOAD
+
+{
+  "action": "NAME_OF_ACTION",
+  "FIELDS": "FOR ACTION"
+}
 ```
 
 Define a url endpoint where we will make post requests to with updates.
 
-We will make a `POST` request to the endpoint and the body is a [JSON Web Token (JWT)](https://jwt.io/)
+We will make a `POST` request to the endpoint with a JSON body
 
-The JWT secret will be your API-key
+The signature is with generated with `Montly-Timestamp` and the payload combined with a `.`
 
 ### Order accepted
 
