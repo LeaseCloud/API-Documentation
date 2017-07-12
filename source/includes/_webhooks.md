@@ -3,13 +3,14 @@
 ```http
 POST https://example.com/montly/callback/ HTTP/1.1
 Montly-Version: 1.0.0
-Montly-Signature: HMAC SHA-256
-Montly-Timestamp: 1499785732
-
+Montly-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PAYLOAD_OLD]
 
 {
-  "action": "NAME_OF_ACTION",
-  "FIELDS": "FOR ACTION"
+  "id": "UNIQUE_EVENT_ID"
+  "type": "NAME_OF_ACTION",
+  "data": {
+    "FIELDS": "FOR ACTION"
+  }
 }
 ```
 
@@ -17,15 +18,22 @@ Define a url endpoint where we will make post requests to with updates.
 
 We will make a `POST` request to the endpoint with a JSON body
 
-The signature is with generated with `Montly-Timestamp` and the payload combined with a `.`
+The signature is with generated with the `payload` combined with a `.` and timestamp found in the `Montly-Signature` header
+
+### Events
+ * order.accepted
+ * order.denied
+ * tariff.updated
 
 ### Order accepted
 
 ```json
 {
-  "action": "orderStatus",
-  "orderId": 42,
-  "status": "[ accepted | denied ]"
+  "id": "event_sdfgkjshdfg87oihsjdgfb",
+  "type": "order.accepted",
+  "data": {
+    "orderId": 42
+  }
 }
 ```
 
@@ -35,17 +43,20 @@ When we have accepted an order we will make a post to an defined endpoint
 
 ```json
 {
-  "action": "tariffs",
-  "tariffs": [  
-    {  
-      "months": 24,
-      "tariff": 1.51
-    },
-    {  
-      "months": 36,
-      "tariff": 1.01
-    }
-  ]
+  "id": "event_dsfsdf55ds3dgfb",
+  "type": "tariff.updated",
+  "data": {
+    "tariffs": [  
+      {  
+        "months": 24,
+        "tariff": 1.51
+      },
+      {  
+        "months": 36,
+        "tariff": 1.01
+      }
+    ]
+  }
 }
 ```
 
