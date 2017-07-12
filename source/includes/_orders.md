@@ -17,8 +17,8 @@ Authorization: Bearer [bearer token]
   "data": {
     "type": "order",
     "attributes": "ORDER OBJECT",
-    "relationships": {  
-      "item": {  
+    "relationships": {
+      "item": {
         "data": [ "ITEM OBJECTS" ]
       }
     }
@@ -34,7 +34,7 @@ Authorization: Bearer [bearer token]
 {
   "data":  {  
     "type": "order",
-    "attributes": {  
+    "attributes": {
       "orderId": "c8e0bda3-dbe0-55ad-8de7-4b341fab49a3",
       "firstName": "Matthew",
       "lastName": "Hunter",
@@ -59,17 +59,17 @@ Authorization: Bearer [bearer token]
       "tariff": 2.1,
       "orgNumber": "559089-4308"
     },
-    "relationships": {  
-      "item": {  
-        "data": [  
-          {  
+    "relationships": {
+      "item": {
+        "data": [
+          {
             "name": "no",
             "productId": "32832849-23cc-550c-9456-06ea2ff0b55c",
             "quantity": 2,
             "totalPrice": 813726,
             "VAT": 12345
           },
-          {  
+          {
             "name": "wel",
             "productId": "88624a25-e7e8-5da4-a819-8af8f5079ce2",
             "quantity": 8,
