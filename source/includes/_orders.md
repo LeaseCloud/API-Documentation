@@ -89,7 +89,7 @@ Authorization: Bearer [bearer token]
 
 ```json
 {
-  "id": 42
+  "orderId": 42
 }
 ```
 
@@ -149,3 +149,18 @@ VAT | integer | ✔︎ |
 sku | string | |
 variationId | string | |
 serialNumber | string | |
+
+<!-- -->
+
+## Cancel an order
+
+```http
+POST /v1/orders/{orderId}/cancel HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer [bearer token]
+```
+
+To cancel an order make a `POST` request `/v1/orders/{orderId}/cancel`
+which will respond with 200 and an empty body
+
+An order can be canceled until the user has signed the order
