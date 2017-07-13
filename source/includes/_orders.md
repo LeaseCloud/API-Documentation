@@ -99,7 +99,7 @@ orgNumber | string | ✔︎ | Company organisation number 000000-0000
 email | string | ✔︎ | Valid email address
 phone | string | ✔︎ | Phone number
 customerIp | string | ✔︎ | IP of the customer (for extra fraud check)
-totalAmount | integer | ✔︎ | Total amount the customer will pay Ex. VAT <br> Minimum 6000 * 100
+totalAmount | integer | ✔︎ | Total amount the customer will pay Ex. VAT <br> Minimum 6000 * 100
 VAT | integer | ✔︎ | Total VAT amount
 shippingAmount | integer | ✔︎ | The shipping cost
 shippingVAT | integer | ✔︎ | The shipping cost VAT
