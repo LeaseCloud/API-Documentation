@@ -13,21 +13,16 @@ Authorization: Bearer [bearer token]
 </div>
 
 ```json
-{  
-  "data": {  
-    "type": "tariffs",
-    "attributes": {  
-      "tariffs": [  
-        {  
-          "months": 24,
-          "tariff": 1.47
-        },
-        {  
-          "months": 36,
-          "tariff": 1.04
-        }
-      ]
+{
+  "tariffs": [  
+    {  
+      "months": 24,
+      "tariff": 1.47
+    },
+    {  
+      "months": 36,
+      "tariff": 1.04
     }
-  }
+  ]
 }
 ```
