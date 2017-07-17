@@ -83,6 +83,31 @@ Authorization: Bearer [bearer token]
 }
 ```
 
+<div class="move-right">
+  <h3>Error response body</h3>
+</div>
+
+```json
+{
+  "errors": [
+    {
+      "title": "notNull Violation",
+      "detail": "orderId cannot be null on orderId",
+      "source": {
+        "pointer": "/orderId"
+      }
+    },
+    {
+      "title": "Validation error",
+      "detail": "A valid organisation number is required e.g. xxxxxx-xxxx on orgNumber",
+      "source": {
+        "pointer": "/orgNumber"
+      }
+    }
+  ]
+}
+```
+
 ### HTTP Request
 
 `POST /v1/orders`
@@ -125,7 +150,6 @@ shippingAddress | object | | An object containing the sipping fields below
  • state | string | | State if applicable
  • postalCode | string | | Postal code
  • country | string | | Country 2 letter code e.g. SE
-sandboxMode | boolean | | If the order is in testmode in which we won't save the order
 customerMessage | string | | If the user left a custom message
 items | Item object | ✔︎ | See below
 
@@ -149,7 +173,6 @@ serialNumber | string | | Serial number of the product
 
 ```http
 POST /v1/orders/{orderId}/cancel HTTP/1.1
-Content-Type: application/json
 Authorization: Bearer [bearer token]
 ```
 
@@ -157,3 +180,14 @@ To cancel an order make a `POST` request `/v1/orders/{orderId}/cancel`
 which will respond with 200 and an empty body
 
 An order can be canceled until the user has signed the order
+
+
+## Order shipped
+
+```http
+POST /v1/orders/{orderId}/shipped HTTP/1.1
+Authorization: Bearer [bearer token]
+```
+
+Make a `POST` request to `/v1/orders/{orderId}/shipped` when an order has been shipped.
+
