@@ -133,14 +133,14 @@ months | integer | ✔︎ | How many months the customer want to lease for
 tariff | decimal | ✔︎ | What was the current tariff when the purchase
 monthlyAmount | integer | ✔︎ | The monthly amount the customer will pay
 kickback | integer | | Any kickback amount you add to the amount
-billingAddress | object | ✔︎ | An object containing the billing fields below
+billing | object | ✔︎ | An object containing the billing fields below
  • address | string | ✔︎ | The street address
  • address2 | string | | Second street address line
  • city | string | ✔︎ | City
  • state | string | | State if applicable
  • postalCode | string | ✔︎ | Postal code
  • country | string | | Country 2 letter code e.g. SE
-shippingAddress | object | | An object containing the sipping fields below
+shipping | object | | An object containing the sipping fields below
  • firstName | string | | Given name
  • lastName | string | | Family name
  • company | string | | Company name
@@ -190,4 +190,5 @@ Authorization: Bearer [bearer token]
 ```
 
 Make a `POST` request to `/v1/orders/{orderId}/shipped` when an order has been shipped.
-
+We will then send a confirmation email where the customer sign that they
+have received the package and the order is completed.
