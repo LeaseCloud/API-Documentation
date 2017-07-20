@@ -189,6 +189,19 @@ POST /v1/orders/{orderId}/shipped HTTP/1.1
 Authorization: Bearer [bearer token]
 ```
 
+<div class="move-right">
+  <h3>(Optional) Request body example</h3>
+</div>
+
+```json
+{
+  "shippedAt": "2017-07-20T13:37:00.000Z"
+}
+```
+
 Make a `POST` request to `/v1/orders/{orderId}/shipped` when an order has been shipped.
+When the request is received we will set the current time as the shipped date
+and time but you can send the body `shippedAt` and ISO-8601 date to override the date.
+
 We will then send a confirmation email where the customer sign that they
 have received the package and the order is completed.
