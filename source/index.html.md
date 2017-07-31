@@ -24,7 +24,13 @@ search: false
 Authorization: Bearer [bearer token]
 ```
 
-Welcome to Montly AB API
+Welcome to Montly API reference site. Please feel free to contact us if you have any questions or feedback.
+
+Here you will find everything you need to develop Montly Leasecloud modules for different e-commerce plattforms or to integrate Montly Leasecloud in your checkout.
+
+Use this [contact form](https://www.montly.com/#gen-contact-section) to get a API key or give us a call at +46844688110.
+
+Until we have a signed partner agreement you will use a sandbox API key that is fully functional but doesn’t create live orders.
 
 
 # Data formats
