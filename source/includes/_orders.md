@@ -139,7 +139,7 @@ billing | object | ✔︎ | An object containing the billing fields below
  • city | string | ✔︎ | City
  • state | string | | State if applicable
  • postalCode | string | ✔︎ | Postal code
- • country | string | | Country 2 letter code e.g. SE
+ • country | string | ✔︎ | Country 2 letter code e.g. SE
 shipping | object | | An object containing the sipping fields below
  • firstName | string | | Given name
  • lastName | string | | Family name
