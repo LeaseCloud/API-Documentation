@@ -14,11 +14,15 @@ Montly-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PAYLOA
 }
 ```
 
+```php
+<?php hash_hmac("sha256", "${TIMESTAMP}.${PAYLOAD}", WEBHOOK_SECRET);
+```
+
 Define a url endpoint where we will make post requests to with updates.
 
 We will make a `POST` request to the endpoint with a JSON body
 
-The signature is with generated with the `payload` combined with a `.` and timestamp found in the `Montly-Signature` header
+The signature is with generated with the timestamp found in the `Montly-Signature` header combined with a `.` and the `payload`
 
 ### Events
  * order.accepted
