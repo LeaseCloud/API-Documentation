@@ -24,19 +24,37 @@ We will make a `POST` request to the endpoint with a JSON body
 
 The signature is with generated with the timestamp found in the `Montly-Signature` header combined with a `.` and the `payload`
 
+We will make up 12 attempts to deliver the webhook with exponential delay up to 7 days from first try.
+Returns 200 http status for success else we are assuming it failed.
+
 ### Events
  * order.accepted
- * order.denied
+ * order.declined
  * tariff.updated
 
 ### Order accepted
 
 ```json
 {
-  "id": "event_sdfgkjshdfg87oihsjdgfb",
+  "id": "evt:sdfgkjshdfg87oihsjdgfb",
   "type": "order.accepted",
   "data": {
     "orderId": 42
+  }
+}
+```
+
+When we have accepted an order we will make a post to an defined endpoint
+
+### Order declined
+
+```json
+{
+  "id": "evt:askjshdfg54fsjdgfb",
+  "type": "order.declined",
+  "data": {
+    "orderId": 42,
+    "reason": "Customer is not credit worthy"
   }
 }
 ```
@@ -47,7 +65,7 @@ When we have accepted an order we will make a post to an defined endpoint
 
 ```json
 {
-  "id": "event_dsfsdf55ds3dgfb",
+  "id": "evt:dsfsdf55ds3dgfb",
   "type": "tariff.updated",
   "data": {
     "tariffs": [  
