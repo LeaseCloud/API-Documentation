@@ -31,7 +31,7 @@ Authorization: Bearer [bearer token]
   "tariff": 1.1,
   "monthlyAmount": 15300,
   "kickback": 0,
-  "billingAddress": {
+  "billing": {
     "address": "Mystreet 121",
     "address2": null,
     "city": "Stockholm",
@@ -39,7 +39,7 @@ Authorization: Bearer [bearer token]
     "postalCode": "12345",
     "country": "SE"
   },
-  "shippingAddress": {
+  "shipping": {
     "firstName": null,
     "lastName": null,
     "company": null,
@@ -50,7 +50,6 @@ Authorization: Bearer [bearer token]
     "postalCode": null,
     "country": null,
   },
-  "sandboxMode": false,
   "customerMessage": "I like cookies!",
   "items": [
     {
