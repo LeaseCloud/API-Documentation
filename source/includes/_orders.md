@@ -30,7 +30,6 @@ Authorization: Bearer [bearer token]
   "months": 24,
   "tariff": 1.1,
   "monthlyAmount": 15300,
-  "kickback": 0,
   "billing": {
     "address": "Mystreet 121",
     "address2": null,
@@ -131,7 +130,6 @@ currency | enum | ✔︎ | In which currency is the amounts. We only support `SE
 months | integer | ✔︎ | How many months the customer want to lease for
 tariff | decimal | ✔︎ | What was the current tariff when the purchase
 monthlyAmount | integer | ✔︎ | The monthly amount the customer will pay
-kickback | integer | | Any kickback amount you add to the amount
 billing | object | ✔︎ | An object containing the billing fields below
  • address | string | ✔︎ | The street address
  • address2 | string | | Second street address line
