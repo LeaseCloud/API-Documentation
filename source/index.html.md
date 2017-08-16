@@ -25,7 +25,7 @@ Authorization: Bearer [bearer token]
 
 Welcome to Montly API reference site. Please feel free to contact us if you have any questions or feedback.
 
-Here you will find everything you need to develop Montly Leasecloud modules for different e-commerce plattforms or to integrate Montly Leasecloud in your checkout.
+Here you will find everything you need to develop Montly LeaseCloud modules for different e-commerce plattforms or to integrate Montly LeaseCloud in your checkout.
 
 Use this [contact form](https://www.montly.com/#gen-contact-section) to get a API key or give us a call at +46844688110.
 
