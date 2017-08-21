@@ -30,6 +30,8 @@ Returns 200 http status for success else we are assuming it failed.
 ### Events
  * order.accepted
  * order.declined
+ * order.signed
+ * order.deliveryApproved
  * tariff.updated
 
 ### Order accepted
@@ -44,7 +46,7 @@ Returns 200 http status for success else we are assuming it failed.
 }
 ```
 
-When we have accepted an order we will make a post to an defined endpoint
+When we have accepted an order and awaiting the customer to sign the agreement
 
 ### Order declined
 
@@ -59,7 +61,35 @@ When we have accepted an order we will make a post to an defined endpoint
 }
 ```
 
-When we have accepted an order we will make a post to an defined endpoint
+The order is declined
+
+### Order signed
+
+```json
+{
+  "id": "evt:sdfgkjshdfg87oihsjdgfb",
+  "type": "order.signed",
+  "data": {
+    "orderId": 42
+  }
+}
+```
+
+The customer has signed and the shop can ship the products
+
+### Order delivery has been approved
+
+```json
+{
+  "id": "evt:sdfgkjshdfg87oihsjdgfb",
+  "type": "order.deliveryApproved",
+  "data": {
+    "orderId": 42
+  }
+}
+```
+
+The customer has confirmed that the products has arrived
 
 ### Updated tariffs
 
