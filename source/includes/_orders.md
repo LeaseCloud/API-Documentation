@@ -202,3 +202,28 @@ and time but you can send the body `shippedAt` and ISO-8601 date to override the
 
 We will then send a confirmation email where the customer sign that they
 have received the package and the order is completed.
+
+
+## Get order status
+
+```http
+GET /v1/orders/{orderId}/status HTTP/1.1
+Authorization: Bearer [bearer token]
+```
+
+```json
+{
+  "status": "pending"
+}
+```
+
+Get the current status for an order
+
+Status | Description
+------ | -----------
+pending | The order has arrived and are being processed
+declined | The order has been declined
+accepted | The order has been accepted and are waiting for the customer to sign the agreement
+signed | The customer has signed and the order can be shipped
+deliveryApproved | The customer has signed that the order has arrived
+cancelled | The order has been cancelled
