@@ -24,7 +24,7 @@ Authorization: Bearer [bearer token]
   "customerIp": "131.168.20.70",
   "totalAmount": 1010000,
   "VAT": 252500,
-  "shipping": 10000,
+  "shippingAmount": 10000,
   "shippingVAT": 2500,
   "currency": "SEK",
   "months": 24,
