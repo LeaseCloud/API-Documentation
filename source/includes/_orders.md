@@ -20,6 +20,7 @@ Authorization: Bearer [bearer token]
   "company": "Montly AB",
   "orgNumber": "559089-4308",
   "email": "hello@montly.com",
+  "authorizedSignatory": null,
   "phone": "09 61 64 48 49",
   "customerIp": "131.168.20.70",
   "totalAmount": 1010000,
@@ -120,6 +121,7 @@ lastName | string | ✔︎ | Family name
 company | string | ✔︎ | Name of the company
 orgNumber | string | ✔︎ | Company organisation number 000000-0000
 email | string | ✔︎ | Valid email address
+authorizedSignatory | string | | Email of the person authorized to sign the contract
 phone | string | ✔︎ | Phone number
 customerIp | string | ✔︎ | IP of the customer (for extra fraud check)
 totalAmount | integer | ✔︎ | Total amount the customer will pay Ex. VAT <br> Minimum 6000 * 100
