@@ -30,7 +30,6 @@ Authorization: Bearer [bearer token]
   "currency": "SEK",
   "months": 24,
   "tariff": 1.1,
-  "monthlyAmount": 15300,
   "billing": {
     "address": "Mystreet 121",
     "address2": null,
@@ -78,7 +77,8 @@ Authorization: Bearer [bearer token]
 
 ```json
 {
-  "orderId": "c8e0bda3-dbe0-55ad-8de7-4b341fab49a3"
+  "orderId": "c8e0bda3-dbe0-55ad-8de7-4b341fab49a3",
+  "monthlyAmount": 50500
 }
 ```
 
@@ -131,7 +131,6 @@ shippingVAT | integer | ✔︎ | The shipping cost VAT
 currency | enum | ✔︎ | In which currency is the amounts. We only support `SEK` at the moment
 months | integer | ✔︎ | How many months the customer want to lease for
 tariff | decimal | ✔︎ | What was the current tariff when the purchase
-monthlyAmount | integer | ✔︎ | The monthly amount the customer will pay
 billing | object | ✔︎ | An object containing the billing fields below
  • address | string | ✔︎ | The street address
  • address2 | string | | Second street address line
