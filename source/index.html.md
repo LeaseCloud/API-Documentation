@@ -31,6 +31,13 @@ Use this [contact form](https://www.montly.com/#gen-contact-section) to get a AP
 
 Until we have a signed partner agreement you will use a sandbox API key that is fully functional but doesn’t create live orders.
 
+# SDK
+* [PHP SDK](https://github.com/MontlyAB/montly-php-sdk)
+* [.NET SDK](https://github.com/MontlyAB/montly-dotnet-sdk)
+
+# Plugins
+* Woocommerce
+* Magento
 
 # Data formats
 
