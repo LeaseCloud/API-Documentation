@@ -88,22 +88,21 @@ Authorization: Bearer [bearer token]
 
 ```json
 {
-  "errors": [
-    {
-      "title": "notNull Violation",
-      "detail": "orderId cannot be null on orderId",
-      "source": {
-        "pointer": "/orderId"
+  "error": {
+    "code": "InvalidOrder",
+    "message": "Validation error",
+    "fields": [
+      {
+        "title": "notNull Violation",
+        "message": "orderId cannot be null on orderId",
+        "field": "orderId"
+      },
+      {
+        "message": "A valid organisation number is required e.g. xxxxxx-xxxx on orgNumber",
+        "field": "orgNumber"
       }
-    },
-    {
-      "title": "Validation error",
-      "detail": "A valid organisation number is required e.g. xxxxxx-xxxx on orgNumber",
-      "source": {
-        "pointer": "/orgNumber"
-      }
-    }
-  ]
+    ]
+  }
 }
 ```
 
