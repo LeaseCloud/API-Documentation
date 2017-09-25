@@ -9,6 +9,7 @@ includes:
   - orders
   - tariffs
   - webhooks
+  - errors
 
 search: false
 ---
