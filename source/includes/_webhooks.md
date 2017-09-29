@@ -7,7 +7,7 @@ Montly-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PAYLOA
 
 {
   "id": "UNIQUE_EVENT_ID"
-  "type": "NAME_OF_ACTION",
+  "action": "NAME_OF_ACTION",
   "data": {
     "FIELDS": "FOR ACTION"
   }
@@ -39,7 +39,7 @@ Returns 200 http status for success else we are assuming it failed.
 ```json
 {
   "id": "evt:sdfgkjshdfg87oihsjdgfb",
-  "type": "order.accepted",
+  "action": "order.accepted",
   "data": {
     "orderId": 42
   }
@@ -53,7 +53,7 @@ When we have accepted an order and awaiting the customer to sign the agreement
 ```json
 {
   "id": "evt:askjshdfg54fsjdgfb",
-  "type": "order.declined",
+  "action": "order.declined",
   "data": {
     "orderId": 42,
     "reason": "Customer is not credit worthy"
@@ -68,7 +68,7 @@ The order is declined
 ```json
 {
   "id": "evt:sdfgkjshdfg87oihsjdgfb",
-  "type": "order.signed",
+  "action": "order.signed",
   "data": {
     "orderId": 42
   }
@@ -82,7 +82,7 @@ The customer has signed and the shop can ship the products
 ```json
 {
   "id": "evt:sdfgkjshdfg87oihsjdgfb",
-  "type": "order.deliveryApproved",
+  "action": "order.deliveryApproved",
   "data": {
     "orderId": 42
   }
@@ -96,7 +96,7 @@ The customer has confirmed that the products has arrived
 ```json
 {
   "id": "evt:dsfsdf55ds3dgfb",
-  "type": "tariff.updated",
+  "action": "tariff.updated",
   "data": {
     "tariffs": [  
       {  
