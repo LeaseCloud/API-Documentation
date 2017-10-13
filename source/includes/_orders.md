@@ -213,7 +213,33 @@ Authorization: Bearer [bearer token]
 
 ```json
 {
-  "status": "pending"
+  "statuses": [
+    {
+      "code": "ACCEPTED",
+      "setAt": "2017-10-04 13:55:16",
+      "message": null
+    }, {
+      "code": "SIGNED",
+      "setAt": null,
+      "message": null
+    }, {
+      "code": "SHIPPED",
+      "setAt": null,
+      "message": null
+    }, {
+      "code": "DELIVERY_APPROVED",
+      "setAt": null,
+      "message": null
+    }, {
+      "code": "DECLINED",
+      "setAt": "2017-10-05 13:37:00",
+      "message": "Not credit worthy"
+    }, {
+      "code": "CANCELLED",
+      "setAt": null,
+      "message": null
+    }
+  ]
 }
 ```
 
@@ -221,9 +247,8 @@ Get the current status for an order
 
 Status | Description
 ------ | -----------
-pending | The order has arrived and are being processed
-declined | The order has been declined
-accepted | The order has been accepted and are waiting for the customer to sign the agreement
-signed | The customer has signed and the order can be shipped
-deliveryApproved | The customer has signed that the order has arrived
-cancelled | The order has been cancelled
+ACCEPTED | The order has been accepted and are waiting for the customer to sign the agreement
+SIGNED | The customer has signed and the order can be shipped
+DELIVERY_APPROVED | The customer has signed that the order has arrived
+DECLINED | The order has been declined
+CANCELLED | The order has been cancelled
