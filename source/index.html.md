@@ -3,7 +3,7 @@ title: LeaseCloud API Reference
 
 language_tabs:
 toc_footers:
-  - <a href='https://www.montly.com'>LeaseCloud AB</a>
+  - <a href='https://www.leasecloud.se'>LeaseCloud AB</a>
 
 includes:
   - orders
@@ -28,7 +28,7 @@ Welcome to LeaseCloud API reference site. Please feel free to contact us if you 
 
 Here you will find everything you need to develop LeaseCloud modules for different e-commerce platforms or to integrate LeaseCloud in your checkout.
 
-Use this [contact form](https://www.montly.com/#gen-contact-section) to get a API key or give us a call at +46844688110.
+Use this [contact form](https://www.leasecloud.se/#lc-contact) to get a API key or give us a call at +46844688110.
 
 Until we have a signed partner agreement you will use a sandbox API key that is fully functional but doesn’t create live orders.
 
@@ -37,8 +37,8 @@ Until we have a signed partner agreement you will use a sandbox API key that is 
 * [.NET SDK](https://github.com/LeaseCloud/leasecloud-dotnet-sdk)
 
 # Plugins
-* Woocommerce
-* Magento
+* [Woocommerce](https://wordpress.org/plugins/leasecloud-for-woocommerce/)
+* Magento [M1](https://www.leasecloud.se/leasing-magento-m1/) [M2](https://www.leasecloud.se/leasing-magento-2)
 
 # Data formats
 

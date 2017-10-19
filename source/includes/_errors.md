@@ -9,7 +9,7 @@
 }
 ```
 
-Montly are using rest status [codes](http://www.restapitutorial.com/httpstatuscodes.html)
+LeaseCloud are using rest status [codes](http://www.restapitutorial.com/httpstatuscodes.html)
 
 If there is an error we will return a 4xx or 5xx status code
 

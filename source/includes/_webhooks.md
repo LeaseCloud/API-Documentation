@@ -1,9 +1,9 @@
 # Webhooks
 
 ```http
-POST https://example.com/montly/callback/ HTTP/1.1
-Montly-Version: 1.0.0
-Montly-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PAYLOAD_OLD]
+POST https://example.com/my/callback/ HTTP/1.1
+LeaseCloud-Version: 1.0.0
+LeaseCloud-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PAYLOAD_OLD]
 
 {
   "id": "UNIQUE_EVENT_ID"
@@ -22,7 +22,7 @@ Define a url endpoint where we will make post requests to with updates.
 
 We will make a `POST` request to the endpoint with a JSON body
 
-The signature is with generated with the timestamp found in the `Montly-Signature` header combined with a `.` and the `payload`
+The signature is with generated with the timestamp found in the `LeaseCloud-Signature` header combined with a `.` and the `payload`
 
 We will make up 12 attempts to deliver the webhook with exponential delay up to 7 days from first try.
 Returns 200 http status for success else we are assuming it failed.
