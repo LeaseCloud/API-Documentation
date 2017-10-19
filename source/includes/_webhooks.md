@@ -18,7 +18,7 @@ LeaseCloud-Signature: t=1499785732,v1=[HMAC_SHA-256_PAYLOAD],v1=[HMAC_SHA-256_PA
 <?php hash_hmac("sha256", "${TIMESTAMP}.${PAYLOAD}", WEBHOOK_SECRET);
 ```
 
-Define a url endpoint where we will make post requests to with updates.
+When becoming a partner we will ask for a url endpoint where we will make post requests to with updates.
 
 We will make a `POST` request to the endpoint with a JSON body
 
