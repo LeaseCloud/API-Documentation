@@ -1,10 +1,10 @@
 
-# Tariff
+# Config
 
-## Get current tariff
+## Get current config
 
 ```http
-GET /v1/tariffs HTTP/1.1
+GET /v1/config HTTP/1.1
 Authorization: Bearer [bearer token]
 ```
 
@@ -14,6 +14,10 @@ Authorization: Bearer [bearer token]
 
 ```json
 {
+  "financeCompany": {
+    "name": "Montly Leasing",
+    "logo": "https://example.com/logo.svg"
+  },
   "tariffs": [  
     {  
       "months": 24,
@@ -26,3 +30,5 @@ Authorization: Bearer [bearer token]
   ]
 }
 ```
+
+Config contains tariffs and info about the finance company

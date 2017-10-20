@@ -7,7 +7,7 @@ toc_footers:
 
 includes:
   - orders
-  - tariffs
+  - config
   - webhooks
   - errors
 
