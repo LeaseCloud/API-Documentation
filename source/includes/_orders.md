@@ -216,7 +216,7 @@ Authorization: Bearer [bearer token]
   "statuses": [
     {
       "code": "ACCEPTED",
-      "setAt": "2017-10-04 13:55:16",
+      "setAt": "2017-10-04T13:55:16.000Z",
       "message": null
     }, {
       "code": "SIGNED",
@@ -232,7 +232,7 @@ Authorization: Bearer [bearer token]
       "message": null
     }, {
       "code": "DECLINED",
-      "setAt": "2017-10-05 13:37:00",
+      "setAt": "2017-10-05T13:37:12.000Z",
       "message": "Not credit worthy"
     }, {
       "code": "CANCELLED",
