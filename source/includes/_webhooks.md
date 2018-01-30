@@ -22,10 +22,10 @@ When becoming a partner we will ask for a url endpoint where we will make post r
 
 We will make a `POST` request to the endpoint with a JSON body
 
-The signature is with generated with the timestamp found in the `LeaseCloud-Signature` header combined with a `.` and the `payload`
+The signature is generated with the timestamp found in the `LeaseCloud-Signature` header combined with a `.` and the `payload`
 
-We will make up 12 attempts to deliver the webhook with exponential delay up to 7 days from first try.
-Returns 200 http status for success else we are assuming it failed.
+We will make up to 12 attempts to deliver the webhook with exponential delay up to 7 days from first try.
+Returns 200 http status for success else we assume it failed.
 
 ### Events
  * order.accepted
@@ -98,12 +98,12 @@ The customer has confirmed that the products has arrived
   "id": "evt:dsfsdf55ds3dgfb",
   "action": "tariff.updated",
   "data": {
-    "tariffs": [  
-      {  
+    "tariffs": [
+      {
         "months": 24,
         "tariff": 1.51
       },
-      {  
+      {
         "months": 36,
         "tariff": 1.01
       }
