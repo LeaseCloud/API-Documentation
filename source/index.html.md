@@ -38,9 +38,9 @@ Authorization: Bearer [bearer token]
 ```
 
 All requests requires `Authorization` header to be set with `Bearer [ACCESS_TOKEN]`.
-When you are becoming a partner we will give you a access token and a webhook token
+When you become a partner we will give you an access token and a webhook token
 
-Use this [contact form](https://www.leasecloud.se/#lc-contact) to get a API key or give us a call at +46844688110.
+Use this [contact form](https://www.leasecloud.se/#lc-contact) to get an API key or give us a call at +46844688110.
 
 Until we have a signed partner agreement you will use a sandbox API key that is fully functional but doesn’t create live orders.
 
@@ -50,10 +50,10 @@ Until we have a signed partner agreement you will use a sandbox API key that is 
 All amounts will be in the smallest currency amount. E.g. 1 SEK = 100 ören, 1 USD = 100 cent
 
 ### Strings
-The maximum length of a string may be 255 characters.
+The maximum length a string may be is 255 characters.
 
 ### Currency
-All currencies is in ISO 4217 standard. E.g. SEK, EUR
+All currencies are in ISO 4217 standard. E.g. SEK, EUR
 
 ### Country
-All Countries are is in ISO 3166 alpha-2. E.g. se = Sweden, no = Norway.
+All Countries are in ISO 3166 alpha-2. E.g. se = Sweden, no = Norway.

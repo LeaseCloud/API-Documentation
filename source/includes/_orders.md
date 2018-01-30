@@ -127,9 +127,9 @@ totalAmount | integer | ✔︎ | Total amount the customer will pay Ex. VAT <br>
 VAT | integer | ✔︎ | Total VAT amount
 shippingAmount | integer | ✔︎ | The shipping cost
 shippingVAT | integer | ✔︎ | The shipping cost VAT
-currency | enum | ✔︎ | In which currency is the amounts. We only support `SEK` at the moment
+currency | enum | ✔︎ | In which currency are the amounts. We only support `SEK` at the moment
 months | integer | ✔︎ | How many months the customer want to lease for
-tariff | decimal | ✔︎ | What was the current tariff when the purchase
+tariff | decimal | ✔︎ | Current tariff at the time of purchase
 billing | object | ✔︎ | An object containing the billing fields below
  • address | string | ✔︎ | The street address
  • address2 | string | | Second street address line
@@ -137,7 +137,7 @@ billing | object | ✔︎ | An object containing the billing fields below
  • state | string | | State if applicable
  • postalCode | string | ✔︎ | Postal code
  • country | string | ✔︎ | Country 2 letter code e.g. SE
-shipping | object | | An object containing the sipping fields below
+shipping | object | | An object containing the shipping fields below
  • firstName | string | | Given name
  • lastName | string | | Family name
  • company | string | | Company name
@@ -247,7 +247,7 @@ Get the current status for an order
 
 Status | Description
 ------ | -----------
-ACCEPTED | The order has been accepted and are waiting for the customer to sign the agreement
+ACCEPTED | The order has been accepted and is waiting for the customer to sign the agreement
 SIGNED | The customer has signed and the order can be shipped
 DELIVERY_APPROVED | The customer has signed that the order has arrived
 DECLINED | The order has been declined
